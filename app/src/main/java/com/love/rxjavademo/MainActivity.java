@@ -1,7 +1,12 @@
 package com.love.rxjavademo;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import com.love.rxjavademo.rxjava.OkHttpActivity;
+import com.love.rxjavademo.rxjava.Test1Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,4 +15,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+
+    public void test1(View view) {
+        startActivity(new Intent(this, Test1Activity.class));
+    }
+
+    public void okHttp(View view) {
+        startActivity(new Intent(this, OkHttpActivity.class));
+    }
+
 }
