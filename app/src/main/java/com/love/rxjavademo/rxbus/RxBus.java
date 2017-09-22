@@ -11,7 +11,6 @@ import io.reactivex.processors.PublishProcessor;
 
 public class RxBus {
 
-
     private final FlowableProcessor<Object> mBus;
 
     private RxBus() {
