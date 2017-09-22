@@ -7,8 +7,15 @@ import android.widget.TextView;
 
 import com.love.rxjavademo.R;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.Random;
 
+import io.reactivex.BackpressureStrategy;
+import io.reactivex.Flowable;
+import io.reactivex.FlowableEmitter;
+import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -145,5 +152,36 @@ public class Test1Activity extends AppCompatActivity {
             }
         });
     }
+
+    private void init4() {
+        Flowable.create(new FlowableOnSubscribe<Integer>() {
+
+            @Override
+            public void subscribe(@NonNull FlowableEmitter<Integer> e) throws Exception {
+
+            }
+        }, BackpressureStrategy.ERROR).subscribe(new Subscriber<Integer>() {
+            @Override
+            public void onSubscribe(Subscription s) {
+
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
 
 }

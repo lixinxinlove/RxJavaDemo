@@ -13,10 +13,9 @@ import com.love.rxjavademo.retrofit.RetrofitClient;
 
 import java.util.List;
 
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
@@ -47,7 +46,23 @@ public class RetrofitActivity extends AppCompatActivity {
                 })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Girl>>() {
+                .subscribe(new Consumer<List<Girl>>() {
+                    @Override
+                    public void accept(List<Girl> girls) throws Exception {
+
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+
+                    }
+                });
+    }
+
+
+
+
+    /*new Observer<List<Girl>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                     }
@@ -69,6 +84,7 @@ public class RetrofitActivity extends AppCompatActivity {
                     @Override
                     public void onComplete() {
                     }
-                });
-    }
+                }*/
+
+
 }

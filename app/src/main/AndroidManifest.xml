@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".rxjava.Test1Activity" />
         <activity android:name=".rxjava.OkHttpActivity" />
-        <activity android:name=".rxjava.RetrofitActivity"></activity>
+        <activity android:name=".rxjava.RetrofitActivity" />
+        <activity android:name=".rxjava.RxJavaActivity"></activity>
     </application>
 
 </manifest>

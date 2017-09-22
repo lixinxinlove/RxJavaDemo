@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.love.rxjavademo.rxjava.OkHttpActivity;
 import com.love.rxjavademo.rxjava.RetrofitActivity;
+import com.love.rxjavademo.rxjava.RxJavaActivity;
 import com.love.rxjavademo.rxjava.Test1Activity;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,5 +30,10 @@ public class MainActivity extends AppCompatActivity {
     public void retrofit(View view) {
         startActivity(new Intent(this, RetrofitActivity.class));
     }
+
+    public void rxBus(View view) {
+        startActivity(new Intent(this, RxJavaActivity.class));
+    }
+
 
 }
