@@ -36,4 +36,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void put(View view) {
+        startActivity(new Intent(this, RecyclerViewActivity.class));
+    }
+
+
 }
