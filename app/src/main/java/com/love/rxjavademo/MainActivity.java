@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.love.rxjavademo.rxjava.OkHttpActivity;
+import com.love.rxjavademo.rxjava.RetrofitActivity;
 import com.love.rxjavademo.rxjava.Test1Activity;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void okHttp(View view) {
         startActivity(new Intent(this, OkHttpActivity.class));
+    }
+
+    public void retrofit(View view) {
+        startActivity(new Intent(this, RetrofitActivity.class));
     }
 
 }

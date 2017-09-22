@@ -34,7 +34,7 @@ public class Test1Activity extends AppCompatActivity {
     }
 
     public void subscribe(View v) {
-        init3();
+        init2();
     }
 
 
@@ -85,11 +85,11 @@ public class Test1Activity extends AppCompatActivity {
             @Override
             public void subscribe(@NonNull ObservableEmitter<String> e) throws Exception {
                 e.onNext("jj");
-                Thread.sleep(2000);
+                //Thread.sleep(2000);
                 e.onNext("jj");
-                Thread.sleep(2000);
+                //   Thread.sleep(2000);
                 e.onNext("jj");
-                Thread.sleep(2000);
+                //  Thread.sleep(2000);
                 e.onComplete();
             }
         }).map(new Function<String, String>() {
@@ -100,13 +100,17 @@ public class Test1Activity extends AppCompatActivity {
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<String>() {
+
+                    private Disposable mDisposable;
+
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-
+                        mDisposable = d;
                     }
 
                     @Override
                     public void onNext(@NonNull String s) {
+                        mDisposable.dispose(); //终止接受
                         textView.setText(textView.getText().toString() + s);
                     }
 

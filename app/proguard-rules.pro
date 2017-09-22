@@ -27,3 +27,6 @@
 -dontwarn okhttp3.**
 -dontwarn okio.**
 -dontwarn javax.annotation.**
+
+-dontwarn okio.**
+-dontwarn javax.annotation.**
