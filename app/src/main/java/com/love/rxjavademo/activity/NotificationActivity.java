@@ -20,6 +20,7 @@ public class NotificationActivity extends AppCompatActivity {
 
 
     private static final String ACTION_PLAY_TOGGLE = "LEE";
+    private static final String ACTION_PLAY_CLOSE = "close";
     private static final int NOTIFICATION_ID = 111;
     private RemoteViews mContentViewSmall;
 
@@ -34,6 +35,7 @@ public class NotificationActivity extends AppCompatActivity {
 
         filter = new IntentFilter();
         filter.addAction(ACTION_PLAY_TOGGLE);
+        filter.addAction(ACTION_PLAY_CLOSE);
         registerReceiver(broadcast, filter);
 
     }
@@ -74,6 +76,7 @@ public class NotificationActivity extends AppCompatActivity {
         remoteView.setImageViewResource(R.id.iv, R.mipmap.ic_launcher);
         remoteView.setTextViewText(R.id.tv_text, "lixinxin");
         remoteView.setOnClickPendingIntent(R.id.iv, getPendingIntent(ACTION_PLAY_TOGGLE));
+        remoteView.setOnClickPendingIntent(R.id.tv_close, getPendingIntent(ACTION_PLAY_CLOSE));
     }
 
 
@@ -88,6 +91,8 @@ public class NotificationActivity extends AppCompatActivity {
             if (intent.getAction().equals(ACTION_PLAY_TOGGLE)) {
                 Toast.makeText(NotificationActivity.this, "点击", Toast.LENGTH_SHORT).show();
                 updateRemoteView();
+            } else if (intent.getAction().equals(ACTION_PLAY_CLOSE)) {
+                notificationManager.cancel(NOTIFICATION_ID);
             }
         }
     }
