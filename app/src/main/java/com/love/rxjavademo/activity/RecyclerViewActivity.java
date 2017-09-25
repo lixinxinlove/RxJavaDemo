@@ -1,11 +1,14 @@
 package com.love.rxjavademo.activity;
 
+import android.app.Service;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 
 import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
 import com.chad.library.adapter.base.listener.OnItemDragListener;
@@ -33,14 +36,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
         initData();
         recyclerView.setAdapter(adapter);
 
-
     }
 
     private void initData() {
 
         mDate = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            mDate.add("lee" + i + 1);
+            mDate.add("lee" + i);
         }
         adapter = new ItemDraggableAdapter(mDate);
 
@@ -54,8 +56,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
         adapter.setOnItemDragListener(onItemDragListener);
 
         // 开启滑动删除
-        adapter.enableSwipeItem();
-        adapter.setOnItemSwipeListener(onItemSwipeListener);
+        //  adapter.enableSwipeItem();
+        //  adapter.setOnItemSwipeListener(onItemSwipeListener);
 
 
     }
@@ -63,6 +65,10 @@ public class RecyclerViewActivity extends AppCompatActivity {
     OnItemDragListener onItemDragListener = new OnItemDragListener() {
         @Override
         public void onItemDragStart(RecyclerView.ViewHolder viewHolder, int pos) {
+            Vibrator vib = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
+            if (vib.hasVibrator()) {
+                vib.vibrate(50);
+            }
         }
 
         @Override
@@ -71,6 +77,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         @Override
         public void onItemDragEnd(RecyclerView.ViewHolder viewHolder, int pos) {
+            for (int i = 0; i < mDate.size(); i++) {
+                Log.e("data", mDate.get(i));
+            }
         }
     };
 
