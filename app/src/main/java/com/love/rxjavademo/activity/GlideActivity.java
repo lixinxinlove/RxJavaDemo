@@ -1,0 +1,55 @@
+package com.love.rxjavademo.activity;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.love.rxjavademo.R;
+import com.love.rxjavademo.glide.GlideApp;
+import com.love.rxjavademo.glide.MyAppGlideModule;
+
+public class GlideActivity extends AppCompatActivity {
+
+
+    ImageView imageView;
+    TextView textView;
+    String url = "https://ws1.sinaimg.cn/large/610dc034ly1fjqw4n86lhj20u00u01kx.jpg";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_glide);
+        imageView = (ImageView) findViewById(R.id.image);
+        textView = (TextView) findViewById(R.id.tv_cache_size);
+        textView.setText(MyAppGlideModule.getCacheSize(this));
+    }
+
+
+    public void loadImage(View v) {
+        GlideApp.with(this).load(url).into(imageView);
+        textView.setText(MyAppGlideModule.getCacheSize(this));
+    }
+
+
+    public void clearCache(View view) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                GlideApp.get(GlideActivity.this).clearDiskCache();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView.setText(MyAppGlideModule.getCacheSize(GlideActivity.this));
+                    }
+                });
+            }
+        }).start();
+
+    }
+
+}
