@@ -41,5 +41,17 @@
         android:onClick="glide"
         android:text="Glide" />
 
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="animator"
+        android:text="animator" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="notification"
+        android:text="notification" />
+
 
 </LinearLayout>
