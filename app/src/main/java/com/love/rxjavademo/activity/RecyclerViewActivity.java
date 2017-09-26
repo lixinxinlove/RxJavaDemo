@@ -58,8 +58,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         // 开启滑动删除
         //  adapter.enableSwipeItem();
         //  adapter.setOnItemSwipeListener(onItemSwipeListener);
-
-
     }
 
     OnItemDragListener onItemDragListener = new OnItemDragListener() {

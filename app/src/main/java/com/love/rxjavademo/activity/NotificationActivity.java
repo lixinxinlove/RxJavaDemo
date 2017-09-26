@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.love.rxjavademo.R;
 
+import java.util.UUID;
+
 public class NotificationActivity extends AppCompatActivity {
 
 
@@ -99,7 +101,7 @@ public class NotificationActivity extends AppCompatActivity {
 
 
     private void updateRemoteView() {
-        mContentViewSmall.setTextViewText(R.id.tv_text, "点击反馈");
+        mContentViewSmall.setTextViewText(R.id.tv_text, getUUID());
         mContentViewSmall.setImageViewResource(R.id.iv, R.mipmap.ic_girl);
         notificationManager.notify(NOTIFICATION_ID, notification);
     }
@@ -109,4 +111,10 @@ public class NotificationActivity extends AppCompatActivity {
         super.onDestroy();
         unregisterReceiver(broadcast);
     }
+
+    public static String getUUID() {
+        return UUID.randomUUID().toString().replace("-", "");
+    }
+
+
 }

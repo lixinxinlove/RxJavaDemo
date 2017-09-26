@@ -27,7 +27,8 @@
         <activity android:name=".activity.RecyclerViewActivity" />
         <activity android:name=".activity.GlideActivity" />
         <activity android:name=".activity.AnimatorActivity" />
-        <activity android:name=".activity.NotificationActivity"></activity>
+        <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.ViewPagerActivity"></activity>
     </application>
 
 </manifest>

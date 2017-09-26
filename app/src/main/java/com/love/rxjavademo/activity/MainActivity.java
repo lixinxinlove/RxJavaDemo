@@ -46,8 +46,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void animator(View view) {
         startActivity(new Intent(this, AnimatorActivity.class));
-    }public void notification(View view) {
+    }
+
+    public void notification(View view) {
         startActivity(new Intent(this, NotificationActivity.class));
+    }
+
+    public void ViewPager(View view) {
+        startActivity(new Intent(this, ViewPagerActivity.class));
     }
 
 
