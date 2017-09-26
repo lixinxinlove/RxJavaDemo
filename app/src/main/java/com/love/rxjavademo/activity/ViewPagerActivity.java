@@ -33,8 +33,9 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     private void initViewPager() {
         WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
-        int width = wm.getDefaultDisplay().getWidth();
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(500, ViewGroup.LayoutParams.WRAP_CONTENT);
+        int screenWidth = wm.getDefaultDisplay().getWidth();
+        int screenHeight = wm.getDefaultDisplay().getHeight();
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(screenWidth * 8 / 10, ViewGroup.LayoutParams.WRAP_CONTENT);
         mViewPager.setLayoutParams(params);
         mViewPager.setAdapter(adapter);
         relativeLayout = (RelativeLayout) findViewById(R.id.relativelayout);
