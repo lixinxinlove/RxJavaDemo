@@ -4,7 +4,6 @@ import android.app.Service;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -19,7 +18,7 @@ import com.love.rxjavademo.adapter.ItemDraggableAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
 

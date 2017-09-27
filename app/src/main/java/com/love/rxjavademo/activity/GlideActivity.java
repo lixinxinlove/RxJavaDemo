@@ -1,7 +1,6 @@
 package com.love.rxjavademo.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,7 +9,7 @@ import com.love.rxjavademo.R;
 import com.love.rxjavademo.glide.GlideApp;
 import com.love.rxjavademo.glide.MyAppGlideModule;
 
-public class GlideActivity extends AppCompatActivity {
+public class GlideActivity extends BaseActivity {
 
 
     ImageView imageView;

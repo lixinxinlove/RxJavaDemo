@@ -4,13 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.love.rxjavademo.R;
 
-public class AnimatorActivity extends AppCompatActivity {
+public class AnimatorActivity extends BaseActivity {
 
 
     private ImageView imageView;

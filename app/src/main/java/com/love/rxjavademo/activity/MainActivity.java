@@ -2,7 +2,6 @@ package com.love.rxjavademo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.love.rxjavademo.R;
@@ -10,13 +9,26 @@ import com.love.rxjavademo.rxjava.OkHttpActivity;
 import com.love.rxjavademo.rxjava.RetrofitActivity;
 import com.love.rxjavademo.rxjava.RxJavaActivity;
 import com.love.rxjavademo.rxjava.Test1Activity;
+import com.love.sdk.EventeCount;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventeCount.onPageStart(this, this.getLocalClassName());
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventeCount.onPageEnd(this, this.getLocalClassName());
     }
 
 

@@ -1,17 +1,17 @@
 package com.love.rxjavademo.rxjava;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.love.rxjavademo.R;
+import com.love.rxjavademo.activity.BaseActivity;
 import com.love.rxjavademo.bean.Girl;
 import com.love.rxjavademo.rxbus.RxBus;
 
 import io.reactivex.functions.Consumer;
 
-public class RxJavaActivity extends AppCompatActivity {
+public class RxJavaActivity extends BaseActivity {
 
 
     private TextView textView;

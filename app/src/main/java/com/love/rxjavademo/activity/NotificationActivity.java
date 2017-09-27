@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -18,7 +17,7 @@ import com.love.rxjavademo.R;
 
 import java.util.UUID;
 
-public class NotificationActivity extends AppCompatActivity {
+public class NotificationActivity extends BaseActivity {
 
 
     private static final String ACTION_PLAY_TOGGLE = "LEE";

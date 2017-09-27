@@ -1,12 +1,12 @@
 package com.love.rxjavademo.rxjava;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.love.rxjavademo.R;
+import com.love.rxjavademo.activity.BaseActivity;
 import com.love.rxjavademo.bean.Girl;
 import com.love.rxjavademo.bean.Result;
 import com.love.rxjavademo.retrofit.RetrofitClient;
@@ -19,7 +19,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-public class RetrofitActivity extends AppCompatActivity {
+public class RetrofitActivity extends BaseActivity {
 
     TextView textView;
 
