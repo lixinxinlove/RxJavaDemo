@@ -9,9 +9,16 @@ import com.love.sdk.EventeCount;
  */
 
 public class App extends Application {
+
+    public static App app;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        EventeCount.init(this);
+
+        app = this;
+
+        EventeCount.init(app);
     }
+
 }

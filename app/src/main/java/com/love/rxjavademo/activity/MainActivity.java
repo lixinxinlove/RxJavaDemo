@@ -2,6 +2,7 @@ package com.love.rxjavademo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.love.rxjavademo.R;
@@ -11,12 +12,34 @@ import com.love.rxjavademo.rxjava.RxJavaActivity;
 import com.love.rxjavademo.rxjava.Test1Activity;
 import com.love.sdk.EventeCount;
 
+import java.net.NetworkInterface;
+import java.net.SocketException;
+
 public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        NetworkInterface networkInterface = null;
+        try {
+            networkInterface = NetworkInterface.getByName("wlan0");
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+        try {
+            String mac = null;
+
+            for(int i=0;i<networkInterface.getHardwareAddress().length;i++){
+                Log.e("mac",networkInterface.getHardwareAddress()[i]+"");
+            }
+
+            mac = new String(networkInterface.getHardwareAddress());
+            Log.e("MAC", mac);
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
