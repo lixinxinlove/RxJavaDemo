@@ -4,13 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".App"
@@ -35,7 +33,8 @@
         <activity android:name=".activity.GlideActivity" />
         <activity android:name=".activity.AnimatorActivity" />
         <activity android:name=".activity.NotificationActivity" />
-        <activity android:name=".activity.ViewPagerActivity"></activity>
+        <activity android:name=".activity.ViewPagerActivity" />
+        <activity android:name=".activity.PackageInfoActivity"></activity>
     </application>
 
 </manifest>
