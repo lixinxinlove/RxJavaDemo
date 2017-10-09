@@ -86,8 +86,16 @@ public class MainActivity extends BaseActivity {
     public void ViewPager(View view) {
         startActivity(new Intent(this, ViewPagerActivity.class));
     }
-  public void packageInfo(View view) {
+
+    public void packageInfo(View view) {
         startActivity(new Intent(this, PackageInfoActivity.class));
+    }
+
+    public void directory(View view) {
+        startActivity(new Intent(this, DirectoryActivity.class));
+    }
+ public void permissions(View view) {
+        startActivity(new Intent(this, RxPermissionsActivity.class));
     }
 
 

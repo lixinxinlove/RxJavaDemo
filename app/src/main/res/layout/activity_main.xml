@@ -69,5 +69,19 @@
         android:text="子定义ViewGrap"
         android:textAllCaps="false" />
 
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="directory"
+        android:text="DirectoryActivity"
+        android:textAllCaps="false" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="permissions"
+        android:text="permissions"
+        android:textAllCaps="false" />
+
 
 </LinearLayout>

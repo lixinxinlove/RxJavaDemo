@@ -40,6 +40,7 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.1.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.28'
     compile 'com.android.support:recyclerview-v7:25.0.0'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
 }
