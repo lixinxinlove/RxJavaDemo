@@ -3,6 +3,7 @@ package com.love.rxjavademo.activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.RemoteInput;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +28,11 @@ public class NotificationActivity extends BaseActivity {
 
     private Broadcast broadcast;
     private IntentFilter filter;
+
+
+    private NotificationManager mNotificationManager;
+    private int i = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +119,51 @@ public class NotificationActivity extends BaseActivity {
 
     public static String getUUID() {
         return UUID.randomUUID().toString().replace("-", "");
+    }
+
+
+    public void click(View v) {
+
+        //[1]获取一个NotificationManager  用来管理Notification
+        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        //[2]创建一个Notification
+        Notification notification = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Title")
+                .setContentText("Android")
+                .setGroup("lee")
+                .build();
+
+        //[3]利用获取一个NotificationManager 发送这个Notification
+        mNotificationManager.notify(i++, notification);
+
+    }
+
+    public void click1(View v) {
+        //[1]获取一个NotificationManager  用来管理Notification
+        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        //[2.1.1]需要创建一个Intent对象 用来处理 用户回复之后的操作
+        Intent intent = new Intent(this, MsgActivity.class);
+        //[2.1.2]创建一个RemoteInput 对象 这个对象是对回复的内容进行加密
+        RemoteInput remoteInput = new RemoteInput.Builder("lee").build();
+        //[2.1]创建一个Action  指定一个PendingIntent对象  这个对象 可以指定 用户点击发送之后 处理哪个Intent对象  用来进行业务跳转
+        //必须添加一个RemoteInput对象 对用户输入的内容进行一个加密
+        Notification.Action action = new Notification.Action.Builder(R.drawable.ic_select_all, "请输入回复的内容", PendingIntent.getActivity(this, 1001, intent, 0))
+                .addRemoteInput(remoteInput)
+                .build();
+
+
+        //[2]创建一个Notification
+        Notification notification = new Notification.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Title")
+                .setContentText("Android")
+                .addAction(action)
+                .build();
+
+        //[3]利用获取一个NotificationManager 发送这个Notification
+        mNotificationManager.notify(1, notification);
+
     }
 
 

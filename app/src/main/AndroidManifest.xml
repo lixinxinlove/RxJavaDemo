@@ -34,7 +34,8 @@
         <activity android:name=".activity.AnimatorActivity" />
         <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.ViewPagerActivity" />
-        <activity android:name=".activity.PackageInfoActivity"></activity>
+        <activity android:name=".activity.PackageInfoActivity" />
+        <activity android:name=".activity.MsgActivity"></activity>
     </application>
 
 </manifest>

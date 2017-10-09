@@ -45,25 +45,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="animator"
-        android:text="animator" />
+        android:text="animator"
+        android:textAllCaps="false" />
 
     <android.support.v7.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="notification"
-        android:text="notification" />
+        android:text="notification"
+        android:textAllCaps="false" />
 
     <android.support.v7.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="ViewPager"
-        android:text="ViewPager" />
+        android:text="ViewPager卡片效果"
+        android:textAllCaps="false" />
 
     <android.support.v7.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="packageInfo"
-        android:text="获取apk信息" />
+        android:text="子定义ViewGrap"
+        android:textAllCaps="false" />
 
 
 </LinearLayout>

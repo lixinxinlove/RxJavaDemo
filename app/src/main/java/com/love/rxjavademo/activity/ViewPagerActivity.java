@@ -34,7 +34,7 @@ public class ViewPagerActivity extends BaseActivity {
         WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
         int screenWidth = wm.getDefaultDisplay().getWidth();
         int screenHeight = wm.getDefaultDisplay().getHeight();
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(screenWidth * 8 / 10, ViewGroup.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(screenWidth * 6 / 10, screenHeight * 6 / 10);
         mViewPager.setLayoutParams(params);
         mViewPager.setAdapter(adapter);
         relativeLayout = (RelativeLayout) findViewById(R.id.relativelayout);
@@ -49,7 +49,7 @@ public class ViewPagerActivity extends BaseActivity {
     //设置切换动画
     public class ZoomOutPageTransformer implements ViewPager.PageTransformer {
         private static final float MAX_SCALE = 1.0f;
-        private static final float MIN_SCALE = 0.9f;//0.85f
+        private static final float MIN_SCALE = 0.85f;//0.85f
 
         @Override
         public void transformPage(View page, float position) {

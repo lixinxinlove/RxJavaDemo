@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 /**
  * Created by android on 2017/9/30.
+ * <p>
+ * 左右对齐的 布局
  */
 
 public class MyLinearLayout extends ViewGroup {
@@ -30,9 +32,8 @@ public class MyLinearLayout extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        measureChildren(widthMeasureSpec, heightMeasureSpec);
-        measureChildren(widthMeasureSpec, heightMeasureSpec);
-        viewGroupWidth=getMeasuredWidth();
+        measureChildren(widthMeasureSpec, heightMeasureSpec);  //必须测量子布局
+        viewGroupWidth = getMeasuredWidth();
     }
 
     @Override
@@ -51,10 +52,10 @@ public class MyLinearLayout extends ViewGroup {
             w += childWidth;
             h += childHeight;
 
-            if (i%2==0){
+            if (i % 2 != 0) {
                 child.layout(0, h - childHeight, childWidth, h);
-            }else {
-                child.layout(viewGroupWidth-childWidth, h - childHeight, viewGroupWidth, h);
+            } else {
+                child.layout(viewGroupWidth - childWidth, h - childHeight, viewGroupWidth, h);
             }
 
         }
