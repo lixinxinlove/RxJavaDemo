@@ -8,9 +8,9 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.love.sdk.ThreadLocalManager;
 import com.love.sdk.activity.BaseActivity;
 
 /**
@@ -23,10 +23,17 @@ public class DeviceUtil {
 
     @SuppressLint("HardwareIds")
     public static String getDeviceId(final Context context) {
+
+
+//        Toast.makeText(context, "sdk", Toast.LENGTH_LONG).show();
+        Log.e("sdk","sdk");
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                BaseActivity activity = (BaseActivity) ThreadLocalManager.tl.get();
-                activity.setRequestPermissionListener(new BaseActivity.RequestPermissionListener() {
+
+                BaseActivity baseActivity=new BaseActivity();
+              //  BaseActivity activity = (BaseActivity) ThreadLocalManager.tl.get();
+                baseActivity.setRequestPermissionListener(new BaseActivity.RequestPermissionListener() {
                     @Override
                     public void onRequestPermissionListener(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
                         grant = grantResults[0] == PackageManager.PERMISSION_GRANTED;
@@ -35,7 +42,7 @@ public class DeviceUtil {
                         }
                     }
                 });
-                ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE}, 0);
+                ActivityCompat.requestPermissions(baseActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 0);
             } else {
                 grant = true;
             }

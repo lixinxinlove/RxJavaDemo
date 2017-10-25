@@ -1,18 +1,20 @@
 package com.love.sdk;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import com.love.sdk.activity.PermissionActivity;
+import com.love.sdk.activity.SingleActivity;
 import com.love.sdk.util.Logger;
+import com.love.sdk.util.PermissionsUtil;
 
 /**
  * Created by android on 2017/9/27.
@@ -20,21 +22,15 @@ import com.love.sdk.util.Logger;
 
 public class EventeCount {
 
-    private static final int MY_requestCode = 100;
 
     private final static String TAG = "EventeCount";
     private static Context mContext;
-    private static Handler handler = new Handler();
+    public static Activity activity;
+
 
     private EventeCount() {
     }
 
-//    private static EventeCount eventeCount = new EventeCount();
-//
-//    public static EventeCount getInstance(Context context) {
-//        mContext = context;
-//        return eventeCount;
-//    }
 
     public static void init(final Context context) {
         mContext = context;
@@ -42,32 +38,30 @@ public class EventeCount {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(3000);
+                    if (PermissionsUtil.checkSinglePermissions(mContext, Manifest.permission.READ_PHONE_STATE)) {
+                        Log.e("EventeCount", "有权限");
+                    } else {
+                        Log.e("EventeCount", "没有权限");
+
+                        Intent intent = new Intent(mContext, SingleActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(intent);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 printDeviceInfo();
             }
         }).start();
-
-
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE)) {
-                    printDeviceInfo2();
-                } else {
-                    //  permissionRequestActivity.requestPermission(new String[]{Manifest.permission.READ_PHONE_STATE}, 100);
-                    // PermissionHelper.requestPermissions(PermissionActivity.activity, new String[]{Manifest.permission.READ_PHONE_STATE}, 100, "title", "text", 1);
-
-                    Intent permIntent = new Intent(context, PermissionActivity.class);
-                    permIntent.putExtra(Const.KEY_PERMISSIONS, new String[]{Manifest.permission.READ_PHONE_STATE});
-                    permIntent.putExtra(Const.KEY_REQUEST_CODE, 100);
-                    permIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(permIntent);
-                    //ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_PHONE_STATE}, 100);
-                }
-            }
-        }, 5000);
-
-
     }
+
+
+    public static void request() {
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE}, 100);
+    }
+
 
     public void setDebugMode(boolean isDebug) {
         Logger.isDebug = isDebug;
@@ -111,7 +105,7 @@ public class EventeCount {
     }
 
     //运营商名称
-    public static String  getNetworkOperatorName() {
+    public static String getNetworkOperatorName() {
         TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         if (tm == null) {
             return "";

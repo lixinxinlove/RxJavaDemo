@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.love.rxjavademo.R;
-import com.love.rxjavademo.glide.GlideApp;
 import com.love.rxjavademo.glide.MyAppGlideModule;
 
 public class GlideActivity extends BaseActivity {
@@ -27,7 +27,7 @@ public class GlideActivity extends BaseActivity {
 
 
     public void loadImage(View v) {
-        GlideApp.with(this).load(url).into(imageView);
+        Glide.with(this).load(url).into(imageView);
         textView.setText(MyAppGlideModule.getCacheSize(this));
     }
 
@@ -38,7 +38,7 @@ public class GlideActivity extends BaseActivity {
             @Override
             public void run() {
 
-                GlideApp.get(GlideActivity.this).clearDiskCache();
+                Glide.get(GlideActivity.this).clearDiskCache();
 
                 runOnUiThread(new Runnable() {
                     @Override
