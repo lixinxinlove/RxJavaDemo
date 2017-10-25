@@ -37,7 +37,8 @@
         <activity android:name=".activity.PackageInfoActivity" />
         <activity android:name=".activity.MsgActivity" />
         <activity android:name=".activity.DirectoryActivity" />
-        <activity android:name=".activity.RxPermissionsActivity"></activity>
+        <activity android:name=".activity.RxPermissionsActivity" />
+        <activity android:name=".activity.LottieActivity"></activity>
     </application>
 
 </manifest>

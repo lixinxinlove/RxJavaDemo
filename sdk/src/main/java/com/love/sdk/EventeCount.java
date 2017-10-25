@@ -38,19 +38,14 @@ public class EventeCount {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(3000);
-                    if (PermissionsUtil.checkSinglePermissions(mContext, Manifest.permission.READ_PHONE_STATE)) {
-                        Log.e("EventeCount", "有权限");
-                    } else {
-                        Log.e("EventeCount", "没有权限");
+                if (PermissionsUtil.checkSinglePermissions(mContext, Manifest.permission.READ_PHONE_STATE)) {
+                    Log.e("EventeCount", "有权限");
+                } else {
+                    Log.e("EventeCount", "没有权限");
 
-                        Intent intent = new Intent(mContext, SingleActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(intent);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Intent intent = new Intent(mContext, SingleActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
                 }
                 printDeviceInfo();
             }
@@ -59,7 +54,7 @@ public class EventeCount {
 
 
     public static void request() {
-        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE}, 100);
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE,Manifest.permission.CAMERA}, 100);
     }
 
 
