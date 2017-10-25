@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.love.sdk.activity.SingleActivity;
 import com.love.sdk.util.Logger;
@@ -54,7 +55,12 @@ public class EventeCount {
 
 
     public static void request() {
-        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE,Manifest.permission.CAMERA}, 100);
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.CAMERA}, 100);
+    }
+
+
+    public static void execute() {
+        Toast.makeText(mContext, "获取权限后", Toast.LENGTH_LONG).show();
     }
 
 

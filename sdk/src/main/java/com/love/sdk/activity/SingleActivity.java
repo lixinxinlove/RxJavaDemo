@@ -42,6 +42,7 @@ public class SingleActivity extends AppCompatActivity {
         if (requestCode == 100) {
             //
             Log.e("SingleActivity", "onRequestPermissionsResult");
+            EventeCount.execute();
         }
         finish();
     }
