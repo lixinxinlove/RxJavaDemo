@@ -94,8 +94,14 @@ public class MainActivity extends BaseActivity {
     public void directory(View view) {
         startActivity(new Intent(this, DirectoryActivity.class));
     }
- public void permissions(View view) {
+
+    public void permissions(View view) {
         startActivity(new Intent(this, RxPermissionsActivity.class));
+    }
+
+
+    public void expandableListView(View view) {
+        startActivity(new Intent(this, ExpandableListViewActivity.class));
     }
 
 

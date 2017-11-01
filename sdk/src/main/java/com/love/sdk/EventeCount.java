@@ -5,17 +5,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
+import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.telephony.TelephonyManager;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.love.sdk.activity.SingleActivity;
+import com.love.sdk.util.LocationUtils;
 import com.love.sdk.util.Logger;
 import com.love.sdk.util.PermissionsUtil;
+
+import java.util.Timer;
 
 /**
  * Created by android on 2017/9/27.
@@ -23,118 +24,49 @@ import com.love.sdk.util.PermissionsUtil;
 
 public class EventeCount {
 
-
     private final static String TAG = "EventeCount";
     private static Context mContext;
     public static Activity activity;
 
 
-    private EventeCount() {
-    }
+    Timer timer = new Timer();
+
 
 
     public static void init(final Context context) {
         mContext = context;
+        getLocation();
+    }
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                if (PermissionsUtil.checkSinglePermissions(mContext, Manifest.permission.READ_PHONE_STATE)) {
-                    Log.e("EventeCount", "有权限");
-                } else {
-                    Log.e("EventeCount", "没有权限");
-
-                    Intent intent = new Intent(mContext, SingleActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    mContext.startActivity(intent);
-                }
-                printDeviceInfo();
-            }
-        }).start();
+    private static void getLocation() {
+        if (PermissionsUtil.checkSinglePermissions(mContext, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            Log.e("EventeCount", "有权限");
+            Location location = LocationUtils.getInstance(mContext).showLocation();
+        } else {
+            Log.e("EventeCount", "没有权限");
+            Intent intent = new Intent(mContext, SingleActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mContext.startActivity(intent);
+        }
     }
 
 
     public static void request() {
-        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.CAMERA}, 100);
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 100);
     }
 
 
     public static void execute() {
         Toast.makeText(mContext, "获取权限后", Toast.LENGTH_LONG).show();
+        Location location = LocationUtils.getInstance(mContext).showLocation();
+        if (location != null) {
+            Log.e(TAG, location.getLatitude() + "--" + location.getLongitude());
+        }
     }
 
 
     public void setDebugMode(boolean isDebug) {
         Logger.isDebug = isDebug;
-    }
-
-    private static void printDeviceInfo() {
-        //  Log.i(TAG, "手机号：" + getLine1Number());
-        //  Log.i(TAG, "deviceId：" + getDeviceId());
-        Log.i(TAG, "运营商名称：" + getNetworkOperatorName());
-        //  Log.i(TAG, "sim卡序列号：" + getSimSerialNumber());
-        Log.i(TAG, "获取当前手机品牌：" + getPhoneProduct());
-        Log.i(TAG, "获取屏幕分辩率：" + getMetrics());
-    }
-
-    private static void printDeviceInfo2() {
-        Log.i(TAG, "手机号：" + getLine1Number());
-        Log.i(TAG, "deviceId：" + getDeviceId());
-        Log.i(TAG, "运营商名称：" + getNetworkOperatorName());
-        Log.i(TAG, "sim卡序列号：" + getSimSerialNumber());
-        Log.i(TAG, "获取当前手机品牌：" + getPhoneProduct());
-        Log.i(TAG, "获取屏幕分辩率：" + getMetrics());
-    }
-
-
-    //手机号码
-    public static String getLine1Number() {
-        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        if (tm == null) {
-            return "";
-        }
-        return "" + tm.getLine1Number();
-    }
-
-    //deviceId
-    public static String getDeviceId() {
-        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        if (tm == null) {
-            return "";
-        }
-        return "" + tm.getDeviceId();
-    }
-
-    //运营商名称
-    public static String getNetworkOperatorName() {
-        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        if (tm == null) {
-            return "";
-        }
-        return "" + tm.getNetworkOperatorName();
-    }
-
-    //sim卡序列号
-    public static String getSimSerialNumber() {
-        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        if (tm == null) {
-            return "";
-        }
-        return "" + tm.getSimSerialNumber();
-    }
-
-    //android 获取当前手机品牌
-    public static String getPhoneProduct() {
-        Build bd = new Build();
-        return bd.PRODUCT;
-    }
-
-    //android 获取屏幕分辩率
-    public static String getMetrics() {
-        DisplayMetrics dm = new DisplayMetrics();
-        int h = dm.heightPixels;
-        int w = dm.widthPixels;
-        return h + "*" + w;
     }
 
 

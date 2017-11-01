@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.love.rxjavademo.activity.ExpandableListViewActivity">
+
+
+    <ExpandableListView
+        android:id="@+id/elv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/darker_gray"
+        android:childDivider="@android:color/darker_gray"
+        android:clipChildren="true"
+        android:divider="@android:color/white"
+        android:dividerHeight="1px"
+        android:footerDividersEnabled="false"
+        android:groupIndicator="@null">
+
+    </ExpandableListView>
+
+
+</LinearLayout>

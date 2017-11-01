@@ -26,6 +26,7 @@ dependencies {
     })
     compile project(':sdk')
 
+    compile 'com.android.support:recyclerview-v7:25.0.0'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
@@ -41,8 +42,7 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.28'
     compile 'com.android.support:recyclerview-v7:25.0.0'
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'com.airbnb.android:lottie:1.0.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
-    compile 'com.airbnb.android:lottie:1.0.1'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
 }

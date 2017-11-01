@@ -1,87 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_test1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="test1"
-        android:text="测试1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="okHttp"
-        android:text="okhttp" />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_test1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="test1"
+            android:text="测试1" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="retrofit"
-        android:text="retrofit" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="okHttp"
+            android:text="okhttp" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="rxBus"
-        android:text="bus" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="retrofit"
+            android:text="retrofit" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="put"
-        android:text="recycler_view" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="rxBus"
+            android:text="bus" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="glide"
-        android:text="Glide" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="put"
+            android:text="recycler_view" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="animator"
-        android:text="animator"
-        android:textAllCaps="false" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="glide"
+            android:text="Glide" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="notification"
-        android:text="notification"
-        android:textAllCaps="false" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="animator"
+            android:text="animator"
+            android:textAllCaps="false" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="ViewPager"
-        android:text="ViewPager卡片效果"
-        android:textAllCaps="false" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="notification"
+            android:text="notification"
+            android:textAllCaps="false" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="packageInfo"
-        android:text="子定义ViewGrap"
-        android:textAllCaps="false" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ViewPager"
+            android:text="ViewPager卡片效果"
+            android:textAllCaps="false" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="directory"
-        android:text="DirectoryActivity"
-        android:textAllCaps="false" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="packageInfo"
+            android:text="子定义ViewGrap"
+            android:textAllCaps="false" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="permissions"
-        android:text="permissions"
-        android:textAllCaps="false" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="directory"
+            android:text="DirectoryActivity"
+            android:textAllCaps="false" />
 
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="permissions"
+            android:text="permissions"
+            android:textAllCaps="false" />
 
-</LinearLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="expandableListView"
+            android:text="expandableListView"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>

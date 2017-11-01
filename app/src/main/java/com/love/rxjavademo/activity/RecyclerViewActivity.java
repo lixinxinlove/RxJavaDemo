@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.listener.OnItemDragListener;
 import com.chad.library.adapter.base.listener.OnItemSwipeListener;
 import com.love.rxjavademo.R;
 import com.love.rxjavademo.adapter.ItemDraggableAdapter;
+import com.love.rxjavademo.view.MyItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class RecyclerViewActivity extends BaseActivity {
         setContentView(R.layout.activity_recycler_view);
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new MyItemDecoration());
         initData();
         recyclerView.setAdapter(adapter);
 
