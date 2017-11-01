@@ -95,7 +95,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return true;
+        return true; // 如果响应child 的点击事件 必须返回true
     }
 
     static class GroupViewHolder {
