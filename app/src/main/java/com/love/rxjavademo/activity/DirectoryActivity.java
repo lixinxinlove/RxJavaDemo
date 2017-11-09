@@ -1,12 +1,8 @@
 package com.love.rxjavademo.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.storage.StorageManager;
-import android.os.storage.StorageVolume;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,11 +18,6 @@ public class DirectoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
 
-
-        StorageManager mStorageManager = (StorageManager) getSystemService(Context.STORAGE_SERVICE);
-        StorageVolume primaryStorageVolume = mStorageManager.getPrimaryStorageVolume();
-        Intent intent = primaryStorageVolume.createAccessIntent(Environment.DIRECTORY_DOWNLOADS);
-        startActivityForResult(intent, 100);
     }
 
 
