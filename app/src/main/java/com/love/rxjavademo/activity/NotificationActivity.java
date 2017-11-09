@@ -35,9 +35,23 @@ public class NotificationActivity extends BaseActivity {
 
 
     @Override
+    protected int getContentViewId() {
+        return R.layout.activity_notification;
+    }
+
+    @Override
+    protected void findView() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
         broadcast = new Broadcast();
 
         filter = new IntentFilter();

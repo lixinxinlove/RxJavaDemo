@@ -25,8 +25,8 @@ public class MsgActivity extends AppCompatActivity {
         //[3]解析传递过来的内容 需要密钥
         CharSequence content = bundle.getCharSequence("lee");
         //[4]显示内容
-        Toast.makeText(this,content,Toast.LENGTH_LONG).show();
-        System.out.println("content :"+content);
+        Toast.makeText(this, content, Toast.LENGTH_LONG).show();
+        System.out.println("content :" + content);
 
         //[5]获取一个NotificationMnager
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -36,7 +36,6 @@ public class MsgActivity extends AppCompatActivity {
                 .setContentText("回复完成")
                 .build();
         //[7]发送这个Notificatio 注意 id 必须 要与 那个可回复的Notification ID 一致 如果不一样那么没有办法处理那个可回复的Notification
-        mNotificationManager.notify(1,notification);
-
+        mNotificationManager.notify(1, notification);
     }
 }

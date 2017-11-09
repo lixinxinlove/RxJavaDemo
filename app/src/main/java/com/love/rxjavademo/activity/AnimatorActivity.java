@@ -15,10 +15,25 @@ public class AnimatorActivity extends BaseActivity {
     private ImageView imageView;
 
     @Override
+    protected int getContentViewId() {
+        return R.layout.activity_animator;
+    }
+
+    @Override
+    protected void findView() {
+        imageView = (ImageView) findViewById(R.id.image);
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animator);
-        imageView = (ImageView) findViewById(R.id.image);
+
+
 
 
     }

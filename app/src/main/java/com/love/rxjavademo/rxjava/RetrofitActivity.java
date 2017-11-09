@@ -24,9 +24,23 @@ public class RetrofitActivity extends BaseActivity {
     TextView textView;
 
     @Override
+    protected int getContentViewId() {
+        return R.layout.activity_retrofit;
+    }
+
+    @Override
+    protected void findView() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit);
         textView = (TextView) findViewById(R.id.tv_text);
     }
 

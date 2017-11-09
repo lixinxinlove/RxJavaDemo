@@ -30,10 +30,24 @@ public class OkHttpActivity extends BaseActivity {
     private ProgressBar progressBar;
 
     @Override
+    protected int getContentViewId() {
+        return R.layout.activity_okhttp;
+    }
+
+    @Override
+    protected void findView() {
+        progressBar = (ProgressBar) findViewById(R.id.pb);
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_okhttp);
-        progressBar = (ProgressBar) findViewById(R.id.pb);
+
     }
 
     public void rxjavaForHttp(View view) {

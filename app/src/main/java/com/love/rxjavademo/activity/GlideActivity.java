@@ -17,12 +17,26 @@ public class GlideActivity extends BaseActivity {
     String url = "https://ws1.sinaimg.cn/large/610dc034ly1fjqw4n86lhj20u00u01kx.jpg";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glide);
+    protected int getContentViewId() {
+        return R.layout.activity_glide;
+    }
+
+    @Override
+    protected void findView() {
         imageView = (ImageView) findViewById(R.id.image);
         textView = (TextView) findViewById(R.id.tv_cache_size);
         textView.setText(MyAppGlideModule.getCacheSize(this));
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
 

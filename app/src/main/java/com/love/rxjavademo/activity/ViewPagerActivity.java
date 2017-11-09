@@ -19,14 +19,28 @@ public class ViewPagerActivity extends BaseActivity {
     private MyAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_pager);
+    protected int getContentViewId() {
+        return R.layout.activity_view_pager;
+    }
+
+    @Override
+    protected void findView() {
         adapter = new MyAdapter();
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
 
         mViewPager.setOverScrollMode(View.OVER_SCROLL_NEVER);
         initViewPager();
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
 

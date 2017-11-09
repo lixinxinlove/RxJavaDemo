@@ -28,15 +28,27 @@ public class RecyclerViewActivity extends BaseActivity {
     private List<String> mDate;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+    protected int getContentViewId() {
+        return R.layout.activity_recycler_view;
+    }
+
+    @Override
+    protected void findView() {
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new MyItemDecoration());
         initData();
         recyclerView.setAdapter(adapter);
+    }
 
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     private void initData() {

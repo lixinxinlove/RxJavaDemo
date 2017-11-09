@@ -17,11 +17,26 @@ public class RxJavaActivity extends BaseActivity {
     private TextView textView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java);
+    protected int getContentViewId() {
+        return R.layout.activity_rx_java;
+    }
+
+    @Override
+    protected void findView() {
+
         textView = (TextView) findViewById(R.id.tv);
         textView.setText("");
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         RxBus.getInstance().register(Girl.class).subscribe(new Consumer<Girl>() {
             @Override
