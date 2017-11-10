@@ -73,9 +73,6 @@ public class RetrofitActivity extends BaseActivity {
                 });
     }
 
-
-
-
     /*new Observer<List<Girl>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

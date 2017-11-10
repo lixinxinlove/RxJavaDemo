@@ -55,7 +55,7 @@ public class Test1Activity extends BaseActivity {
     }
 
     public void subscribe(View v) {
-        init2();
+        init();
     }
 
 
@@ -63,11 +63,11 @@ public class Test1Activity extends BaseActivity {
         Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<Integer> e) throws Exception {
-                e.onNext(1);
-                Thread.sleep(2000);
-                e.onNext(2);
-                Thread.sleep(2000);
-                e.onNext(3);
+
+                for (int i = 0; i < 100; i++) {
+                    e.onNext(i);
+                    Thread.sleep(200);
+                }
                 e.onComplete();
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());

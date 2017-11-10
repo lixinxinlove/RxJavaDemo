@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.love.rxjavademo.ex.AppManager;
 
@@ -12,7 +13,7 @@ import com.love.rxjavademo.ex.AppManager;
  * Created by android on 2017/9/27.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private final String TAG1 = getClass().getName();
@@ -42,6 +43,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     @Override

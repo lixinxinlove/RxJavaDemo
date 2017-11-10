@@ -94,5 +94,12 @@
             android:onClick="expandableListView"
             android:text="expandableListView"
             android:textAllCaps="false" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="shareActivity"
+            android:text="shareActivity"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

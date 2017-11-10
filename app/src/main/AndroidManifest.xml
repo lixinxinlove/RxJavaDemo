@@ -44,7 +44,8 @@
         <activity android:name=".activity.DirectoryActivity" />
         <activity android:name=".activity.RxPermissionsActivity" />
         <activity android:name=".activity.LottieActivity" />
-        <activity android:name=".activity.ExpandableListViewActivity"></activity>
+        <activity android:name=".activity.ExpandableListViewActivity" />
+        <activity android:name=".activity.ShareActivity"></activity>
     </application>
 
 </manifest>
