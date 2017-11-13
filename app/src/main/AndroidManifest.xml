@@ -45,7 +45,9 @@
         <activity android:name=".activity.RxPermissionsActivity" />
         <activity android:name=".activity.LottieActivity" />
         <activity android:name=".activity.ExpandableListViewActivity" />
-        <activity android:name=".activity.ShareActivity"></activity>
+        <activity android:name=".activity.ShareActivity" />
+        <activity android:name=".activity.ScrollViewActivity" />
+        <activity android:name=".activity.RxSharedPreferencesActivity"></activity>
     </application>
 
 </manifest>

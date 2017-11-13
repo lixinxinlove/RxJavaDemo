@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
 import com.chad.library.adapter.base.listener.OnItemDragListener;
@@ -37,8 +38,25 @@ public class RecyclerViewActivity extends BaseActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new MyItemDecoration());
+        recyclerView.setNestedScrollingEnabled(false);
+
+
         initData();
+
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                Log.e("lee--", recyclerView.getHeight() + "");
+
+                Toast.makeText(RecyclerViewActivity.this, recyclerView.getHeight() + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     @Override
@@ -54,7 +72,7 @@ public class RecyclerViewActivity extends BaseActivity {
     private void initData() {
 
         mDate = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 300; i++) {
             mDate.add("lee" + i);
         }
         adapter = new ItemDraggableAdapter(mDate);

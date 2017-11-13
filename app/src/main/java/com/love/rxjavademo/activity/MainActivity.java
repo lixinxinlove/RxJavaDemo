@@ -214,13 +214,18 @@ public class MainActivity extends BaseActivity {
     public void expandableListView(View view) {
         startActivity(new Intent(this, ExpandableListViewActivity.class));
     }
-  public void shareActivity(View view) {
+
+    public void shareActivity(View view) {
         startActivity(new Intent(this, ShareActivity.class));
     }
 
+    public void scrollViewActivity(View view) {
+        startActivity(new Intent(this, ScrollViewActivity.class));
+    }
 
-
-
+  public void RxSharedPreferencesActivity(View view) {
+        startActivity(new Intent(this, RxSharedPreferencesActivity.class));
+    }
 
 
 }
