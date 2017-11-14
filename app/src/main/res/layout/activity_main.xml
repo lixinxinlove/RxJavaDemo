@@ -115,5 +115,20 @@
             android:onClick="RxSharedPreferencesActivity"
             android:text="RxSharedPreferencesActivity"
             android:textAllCaps="false" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ViewStubActivity"
+            android:text="ViewStubActivity"
+            android:textAllCaps="false" />
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="SQLiteActivity"
+            android:text="SQLiteActivity"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

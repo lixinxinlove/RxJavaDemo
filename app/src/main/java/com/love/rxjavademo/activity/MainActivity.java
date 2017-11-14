@@ -223,8 +223,15 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(this, ScrollViewActivity.class));
     }
 
-  public void RxSharedPreferencesActivity(View view) {
+    public void RxSharedPreferencesActivity(View view) {
         startActivity(new Intent(this, RxSharedPreferencesActivity.class));
+    }
+
+    public void ViewStubActivity(View view) {
+        startActivity(new Intent(this, ViewStubActivity.class));
+    }
+ public void SQLiteActivity(View view) {
+        startActivity(new Intent(this, SQLiteActivity.class));
     }
 
 
