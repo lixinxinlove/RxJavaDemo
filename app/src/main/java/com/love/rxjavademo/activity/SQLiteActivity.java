@@ -33,7 +33,12 @@ public class SQLiteActivity extends BaseActivity {
         ContentValues values = new ContentValues();
         values.put("bookName", "lixinxin");
         values.put("bookDesc", "lixinxin life");
+        db.insert("study", null, values);  //插入
+        //  db.delete("study", "_id = ?", new String[]{"2"}); //删除
 
-        db.insert("study", null, values);
+        ContentValues values1 = new ContentValues();
+        values1.put("bookName", "lee");
+
+        db.update("study", values1, "_id = ?", new String[]{"2"}); //更新
     }
 }
