@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <root-path
+            name="download"
+            path="" />
+
+        <!--（1）当我们使用Context.getFilesDir()获取路径时我们应该配置成 -->
+        <files-path
+            name="name"
+            path="path" />
+        <!-- （2）当我们使用getCacheDir()获取存储路径时，应该配置成-->
+        <cache-path
+            name="name"
+            path="path" />
+        <!-- （3）使用Environment.getExternalStorageDirectory()获取目录时 path值可以为null，null代表授权这个目录下的所有文件，name必须写，不然会报严重异常-->
+        <root-path
+            name="download"
+            path="" />
+        <!--（4）使用Context.getExternalCacheDir()-->
+        <external-cache-path
+            name="name"
+            path="path" />
+        <!--       （5）使用Context.getExternalFilesDir(null)配置成-->
+        <external-files-path
+            name="name"
+            path="path" />
+
+    </paths>
+
+</resources>

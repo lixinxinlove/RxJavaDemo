@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.love.rxjavademo.R;
+import com.love.rxjavademo.md.MaterialDesignActivity;
 import com.love.rxjavademo.rxjava.OkHttpActivity;
 import com.love.rxjavademo.rxjava.RetrofitActivity;
 import com.love.rxjavademo.rxjava.RxJavaActivity;
@@ -230,8 +231,13 @@ public class MainActivity extends BaseActivity {
     public void ViewStubActivity(View view) {
         startActivity(new Intent(this, ViewStubActivity.class));
     }
- public void SQLiteActivity(View view) {
+
+    public void SQLiteActivity(View view) {
         startActivity(new Intent(this, SQLiteActivity.class));
+    }
+
+    public void MaterialDesignActivity(View view) {
+        startActivity(new Intent(this, MaterialDesignActivity.class));
     }
 
 
