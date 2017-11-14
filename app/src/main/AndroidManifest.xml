@@ -50,7 +50,8 @@
         <activity android:name=".activity.RxSharedPreferencesActivity" />
         <activity android:name=".activity.ViewStubActivity" />
         <activity android:name=".activity.SQLiteActivity" />
-        <activity android:name=".md.MaterialDesignActivity"></activity>
+        <activity android:name=".md.MaterialDesignActivity" />
+        <activity android:name=".activity.ConstraintLayoutActivity"></activity>
     </application>
 
 </manifest>
