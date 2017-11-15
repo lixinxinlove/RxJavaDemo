@@ -52,4 +52,9 @@ public class RxJavaActivity extends BaseActivity {
         RxBus.getInstance().post(girl);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
 }

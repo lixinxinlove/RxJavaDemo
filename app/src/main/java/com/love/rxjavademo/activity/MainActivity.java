@@ -239,8 +239,13 @@ public class MainActivity extends BaseActivity {
     public void MaterialDesignActivity(View view) {
         startActivity(new Intent(this, MaterialDesignActivity.class));
     }
- public void ConstraintLayoutActivity(View view) {
+
+    public void ConstraintLayoutActivity(View view) {
         startActivity(new Intent(this, ConstraintLayoutActivity.class));
+    }
+
+    public void LocalBroadcastActivity(View view) {
+        startActivity(new Intent(this, LocalBroadcastActivity.class));
     }
 
 
