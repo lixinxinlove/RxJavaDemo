@@ -38,7 +38,7 @@ public class RecyclerViewActivity extends BaseActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new MyItemDecoration());
-        recyclerView.setNestedScrollingEnabled(false);
+       // recyclerView.setNestedScrollingEnabled(false);
 
 
         initData();

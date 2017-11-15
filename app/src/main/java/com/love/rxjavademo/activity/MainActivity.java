@@ -247,6 +247,9 @@ public class MainActivity extends BaseActivity {
     public void LocalBroadcastActivity(View view) {
         startActivity(new Intent(this, LocalBroadcastActivity.class));
     }
+ public void RecyclerViewAdapterActivity(View view) {
+        startActivity(new Intent(this, RecyclerViewAdapterActivity.class));
+    }
 
 
 }

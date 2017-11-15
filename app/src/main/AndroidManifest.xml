@@ -52,7 +52,11 @@
         <activity android:name=".activity.SQLiteActivity" />
         <activity android:name=".md.MaterialDesignActivity" />
         <activity android:name=".activity.ConstraintLayoutActivity" />
-        <activity android:name=".activity.LocalBroadcastActivity"></activity>
+        <activity android:name=".activity.LocalBroadcastActivity" />
+        <activity
+            android:name=".activity.RecyclerViewAdapterActivity"
+            android:label="@string/title_activity_recycler_view_adpter"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
