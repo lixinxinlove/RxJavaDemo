@@ -3,7 +3,7 @@ package com.love.rxjavademo.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -36,7 +36,10 @@ public class RecyclerViewAdapterActivity extends BaseActivity implements BaseQui
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+
+        recyclerView.setLayoutManager(gridLayoutManager);
         initData();
 
     }
@@ -52,15 +55,13 @@ public class RecyclerViewAdapterActivity extends BaseActivity implements BaseQui
         }
         adapter = new MultipleItemQuickAdapter(mData);
         //adapter.disableLoadMoreIfNotFullPage();
-
         adapter.setLoadMoreView(new CustomLoadMoreView());
-
+        adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         adapter.setEnableLoadMore(true);
         adapter.setOnLoadMoreListener(this, recyclerView);
         adapter.setOnItemChildClickListener(this);
 
         recyclerView.setAdapter(adapter);
-
 
     }
 
@@ -92,17 +93,23 @@ public class RecyclerViewAdapterActivity extends BaseActivity implements BaseQui
     @Override
     public void onLoadMoreRequested() {
 
-        MultipleItem item = new MultipleItem(0);
-        item.setText("加载更多");
-        item.setUrl("");
-        mData.add(item);
-
-        item.setItemType(1);
 
         recyclerView.postDelayed(new Runnable() {
             @Override
             public void run() {
-                adapter.loadMoreComplete();
+
+                if (mData.size() > 35) {
+                    adapter.loadMoreEnd();
+                } else {
+                    MultipleItem item = new MultipleItem(0);
+                    item.setText("加载更多");
+                    item.setUrl("");
+                    mData.add(item);
+                    item.setItemType(1);
+
+                    adapter.loadMoreComplete();
+                }
+
             }
         }, 2000);
     }
