@@ -250,6 +250,9 @@ public class MainActivity extends BaseActivity {
  public void RecyclerViewAdapterActivity(View view) {
         startActivity(new Intent(this, RecyclerViewAdapterActivity.class));
     }
+public void ViewSwitcherActivity(View view) {
+        startActivity(new Intent(this, ViewSwitcherActivity.class));
+    }
 
 
 }

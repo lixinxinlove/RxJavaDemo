@@ -56,7 +56,8 @@
         <activity
             android:name=".activity.RecyclerViewAdapterActivity"
             android:label="@string/title_activity_recycler_view_adpter"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.ViewSwitcherActivity"></activity>
     </application>
 
 </manifest>

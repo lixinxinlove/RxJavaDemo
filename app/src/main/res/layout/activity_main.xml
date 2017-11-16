@@ -137,6 +137,7 @@
             <android.support.v7.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="点击"
                 android:onClick="SQLiteActivity"
                 android:text="SQLiteActivity"
                 android:textAllCaps="false" />
@@ -168,8 +169,14 @@
                 android:onClick="RecyclerViewAdapterActivity"
                 android:text="RecyclerViewAdapterActivity"
                 android:textAllCaps="false" />
-        </com.google.android.flexbox.FlexboxLayout>
 
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="ViewSwitcherActivity"
+                android:text="ViewSwitcher"
+                android:textAllCaps="false" />
+        </com.google.android.flexbox.FlexboxLayout>
 
     </LinearLayout>
 </ScrollView>
