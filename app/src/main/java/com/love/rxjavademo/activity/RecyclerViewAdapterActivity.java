@@ -2,8 +2,7 @@ package com.love.rxjavademo.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -37,9 +36,9 @@ public class RecyclerViewAdapterActivity extends BaseActivity implements BaseQui
         super.onCreate(savedInstanceState);
 
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        // GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
 
-        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         initData();
 
     }
@@ -74,8 +73,10 @@ public class RecyclerViewAdapterActivity extends BaseActivity implements BaseQui
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                adapter.setShowPoint(!adapter.isShow);
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
 

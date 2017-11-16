@@ -12,12 +12,10 @@ import java.util.List;
  */
 
 public class MultipleItemQuickAdapter extends BaseMultiItemQuickAdapter<MultipleItem, BaseViewHolder> {
-    /**
-     * Same as QuickAdapter#QuickAdapter(Context,int) but with
-     * some initialization data.
-     *
-     * @param data A new list is created out of this one to avoid mutable list
-     */
+
+
+    public boolean isShow = false;
+
     public MultipleItemQuickAdapter(List<MultipleItem> data) {
         super(data);
         addItemType(MultipleItem.TEXT, R.layout.text_view);
@@ -30,12 +28,29 @@ public class MultipleItemQuickAdapter extends BaseMultiItemQuickAdapter<Multiple
             case MultipleItem.TEXT:
                 helper.setText(R.id.tv_text, item.getText());
                 helper.addOnClickListener(R.id.tv_text);
+
+                if (isShow) {
+                    helper.setGone(R.id.iv_point, true);
+                } else {
+                    helper.setGone(R.id.iv_point, false);
+                }
+
                 break;
             case MultipleItem.IMG:
                 helper.setImageResource(R.id.iv_image, R.mipmap.ic_girl);
                 helper.addOnClickListener(R.id.iv_image);
+                if (isShow) {
+                    helper.setGone(R.id.iv_point, true);
+                } else {
+                    helper.setGone(R.id.iv_point, false);
+                }
                 break;
         }
-
     }
+
+    public void setShowPoint(boolean isShow) {
+        this.isShow = isShow;
+        this.notifyDataSetChanged();
+    }
+
 }
