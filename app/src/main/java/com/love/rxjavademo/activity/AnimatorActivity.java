@@ -33,9 +33,6 @@ public class AnimatorActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
-
     }
 
     public void btn1(View view) {

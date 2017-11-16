@@ -1,5 +1,7 @@
 package com.love.rxjavademo.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -68,6 +70,8 @@ public class ViewSwitcherActivity extends BaseActivity {
 
         Animation slide_in_left = AnimationUtils.loadAnimation(this, R.anim.slide_in_boom);
         Animation slide_out_right = AnimationUtils.loadAnimation(this, R.anim.slide_out_top);
+
+        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.animator_demo1);  //属性动画
 
         viewSwitcher.setInAnimation(slide_in_left);
         viewSwitcher.setOutAnimation(slide_out_right);
