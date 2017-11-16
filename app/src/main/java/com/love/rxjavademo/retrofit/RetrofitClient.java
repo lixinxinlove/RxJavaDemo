@@ -25,12 +25,7 @@ public class RetrofitClient {
             synchronized (RetrofitClient.class) {
                 if (mRetrofitClient == null) {
                     mRetrofitClient = new RetrofitClient();
-
-                    mClient = new OkHttpClient.Builder()
-                            .connectTimeout(10, TimeUnit.SECONDS)
-                            .readTimeout(10, TimeUnit.SECONDS)
-                            .writeTimeout(10, TimeUnit.SECONDS)
-                            .build();
+                    getOkHttpClient();
                 }
             }
         }
@@ -53,5 +48,23 @@ public class RetrofitClient {
         }
         return mGankIO;
     }
+
+
+    private static OkHttpClient getOkHttpClient() {
+
+        if (mClient == null) {
+            synchronized (RetrofitClient.class) {
+                if (mClient == null) {
+                    mClient = new OkHttpClient.Builder()
+                            .connectTimeout(10, TimeUnit.SECONDS)
+                            .readTimeout(10, TimeUnit.SECONDS)
+                            .writeTimeout(10, TimeUnit.SECONDS)
+                            .build();
+                }
+            }
+        }
+        return mClient;
+    }
+
 
 }
