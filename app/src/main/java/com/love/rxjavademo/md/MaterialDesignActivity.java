@@ -12,6 +12,7 @@ public class MaterialDesignActivity extends BaseActivity {
         return R.layout.activity_material_design;
     }
 
+
     @Override
     protected void findView() {
 
@@ -25,5 +26,7 @@ public class MaterialDesignActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //LinearLayoutCompat 添加分割线
+
     }
 }

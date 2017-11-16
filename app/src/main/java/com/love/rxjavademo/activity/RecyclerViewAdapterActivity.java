@@ -2,6 +2,7 @@ package com.love.rxjavademo.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -75,8 +76,12 @@ public class RecyclerViewAdapterActivity extends BaseActivity implements BaseQui
             public void onClick(View view) {
 
                 adapter.setShowPoint(!adapter.isShow);
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+                Snackbar.make(view, "这个是一个Snackbar", Snackbar.LENGTH_LONG).setAction("这里可以点击", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(RecyclerViewAdapterActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
             }
         });
 
