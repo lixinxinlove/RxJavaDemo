@@ -15,6 +15,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -57,7 +61,8 @@
             android:name=".activity.RecyclerViewAdapterActivity"
             android:label="@string/title_activity_recycler_view_adpter"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.ViewSwitcherActivity"></activity>
+        <activity android:name=".activity.ViewSwitcherActivity" />
+        <activity android:name=".activity.OkIoActivity"></activity>
     </application>
 
 </manifest>

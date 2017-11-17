@@ -60,8 +60,4 @@ public class AnimatorActivity extends BaseActivity {
         animator.start();
     }
 
-
-
-
-
 }

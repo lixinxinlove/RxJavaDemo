@@ -247,11 +247,17 @@ public class MainActivity extends BaseActivity {
     public void LocalBroadcastActivity(View view) {
         startActivity(new Intent(this, LocalBroadcastActivity.class));
     }
- public void RecyclerViewAdapterActivity(View view) {
+
+    public void RecyclerViewAdapterActivity(View view) {
         startActivity(new Intent(this, RecyclerViewAdapterActivity.class));
     }
-public void ViewSwitcherActivity(View view) {
+
+    public void ViewSwitcherActivity(View view) {
         startActivity(new Intent(this, ViewSwitcherActivity.class));
+    }
+
+    public void OkIoActivity(View view) {
+        startActivity(new Intent(this, OkIoActivity.class));
     }
 
 
