@@ -60,14 +60,13 @@ public class ExpandableListViewActivity extends AppCompatActivity implements Exp
 
     @Override
     public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+        Toast.makeText(this, "第" + groupPosition + "组", Toast.LENGTH_SHORT).show();
         return true;
     }
 
     @Override
     public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-        Toast.makeText(this, "第" + groupPosition + "组第"+childPosition+"个", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "第" + groupPosition + "组第" + childPosition + "个", Toast.LENGTH_SHORT).show();
         return true;
     }
-
-
 }
