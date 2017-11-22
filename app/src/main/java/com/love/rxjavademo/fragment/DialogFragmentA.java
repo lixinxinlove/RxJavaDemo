@@ -35,7 +35,7 @@ public class DialogFragmentA extends BaseDialogFragment implements View.OnClickL
         Window window = getDialog().getWindow();
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         WindowManager.LayoutParams windowParams = window.getAttributes();
-        windowParams.dimAmount = 0.5f;
+        windowParams.dimAmount = 0.5f;   //背景 透明度
         windowParams.windowAnimations = R.style.dialogAnim;  //dialog 弹出的动画
         //windowParams.y = 100;  //距离顶部100
         windowParams.gravity = Gravity.BOTTOM;  //底部
@@ -50,7 +50,6 @@ public class DialogFragmentA extends BaseDialogFragment implements View.OnClickL
         dialog.setCanceledOnTouchOutside(false);
         dialog.setOnKeyListener(this);
         dialog.setOnDismissListener(this);
-
     }
 
 
