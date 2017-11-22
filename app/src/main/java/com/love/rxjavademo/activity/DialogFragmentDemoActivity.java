@@ -1,6 +1,7 @@
 package com.love.rxjavademo.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -17,8 +18,17 @@ public class DialogFragmentDemoActivity extends AppCompatActivity {
 
 
     public void show(View v) {
-        DialogFragmentA dialogFragmentA = new DialogFragmentA();
+        final DialogFragmentA dialogFragmentA = new DialogFragmentA();
         dialogFragmentA.show(getSupportFragmentManager(), "lee");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialogFragmentA.showKeyboard();
+            }
+        }, 200);
+
+
     }
 
 }

@@ -1,31 +1,33 @@
 package com.love.rxjavademo.fragment;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
-import android.view.LayoutInflater;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.love.rxjavademo.R;
+import com.love.rxjavademo.fragment.base.BaseDialogFragment;
 
 /**
  * Created by android on 2017/11/22.
  */
 
-public class DialogFragmentA extends DialogFragment implements View.OnClickListener {
+public class DialogFragmentA extends BaseDialogFragment implements View.OnClickListener, DialogInterface.OnKeyListener {
 
-    private View view;
     private Button btnClose;
+    private EditText editText;
 
     @Override
     public void onStart() {
@@ -46,31 +48,23 @@ public class DialogFragmentA extends DialogFragment implements View.OnClickListe
             dialog.getWindow().setLayout((int) (dm.widthPixels * 1.0), ViewGroup.LayoutParams.WRAP_CONTENT);
         }
         dialog.setCanceledOnTouchOutside(false);
+        dialog.setOnKeyListener(this);
+        dialog.setOnDismissListener(this);
+
     }
 
-    @NonNull
+
+    protected void findView() {
+        btnClose = (Button) rootView.findViewById(R.id.btn_close);
+        editText = (EditText) rootView.findViewById(R.id.edit_name);
+    }
+
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return super.onCreateDialog(savedInstanceState);
+    protected int getResId() {
+        return R.layout.dialog_fragment_a;
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);  //去掉标题
-
-        view = inflater.inflate(R.layout.dialog_fragment_a, null);
-        findView();
-        setListener();
-        return view;
-    }
-
-    private void findView() {
-        btnClose = (Button) view.findViewById(R.id.btn_close);
-    }
-
-    private void setListener() {
+    protected void setListener() {
         btnClose.setOnClickListener(this);
     }
 
@@ -82,6 +76,38 @@ public class DialogFragmentA extends DialogFragment implements View.OnClickListe
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Toast.makeText(getContext(), "返回建", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        Toast.makeText(getContext(), "onDismiss", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 弹出软键盘  需要延时调用
+     */
+    public void showKeyboard() {
+        if (editText != null) {
+            //设置可获得焦点
+            editText.setFocusable(true);
+            editText.setFocusableInTouchMode(true);
+            //请求获得焦点
+            editText.requestFocus();
+            //调用系统输入法
+            InputMethodManager inputManager = (InputMethodManager) editText
+                    .getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.showSoftInput(editText, 0);
         }
     }
 }
