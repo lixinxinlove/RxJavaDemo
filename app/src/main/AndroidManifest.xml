@@ -14,10 +14,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
         android:name=".App"
@@ -62,7 +60,21 @@
             android:label="@string/title_activity_recycler_view_adpter"
             android:theme="@style/AppTheme" />
         <activity android:name=".activity.ViewSwitcherActivity" />
-        <activity android:name=".activity.OkIoActivity"></activity>
+        <activity android:name=".activity.OkIoActivity" />
+        <activity android:name=".activity.URLActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="lixinxin.com"
+                    android:pathPrefix="/app"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.DialogFragmentDemoActivity"></activity>
     </application>
 
 </manifest>

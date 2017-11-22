@@ -260,5 +260,9 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(this, OkIoActivity.class));
     }
 
+    public void DialogFragmentDemoActivity(View view) {
+        startActivity(new Intent(this, DialogFragmentDemoActivity.class));
+    }
+
 
 }
