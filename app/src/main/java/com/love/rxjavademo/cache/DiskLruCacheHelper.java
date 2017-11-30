@@ -3,6 +3,8 @@ package com.love.rxjavademo.cache;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.util.Log;
 
@@ -317,30 +319,30 @@ public class DiskLruCacheHelper {
     // =======================================
     // ============== bitmap 数据 读写 =============
     // =======================================
-//    public void put(String key, Bitmap bitmap) {
-//        put(key, Utils.bitmap2Bytes(bitmap));
-//    }
+    public void put(String key, Bitmap bitmap) {
+        put(key, Utils.bitmap2Bytes(bitmap));
+    }
 
-//    public Bitmap getAsBitmap(String key) {
-//        byte[] bytes = getAsBytes(key);
-//        if (bytes == null) return null;
-//        return Utils.bytes2Bitmap(bytes);
-//    }
+    public Bitmap getAsBitmap(String key) {
+        byte[] bytes = getAsBytes(key);
+        if (bytes == null) return null;
+        return Utils.bytes2Bitmap(bytes);
+    }
 
     // =======================================
     // ============= drawable 数据 读写 =============
     // =======================================
-//    public void put(String key, Drawable value) {
-//        put(key, Utils.drawable2Bitmap(value));
-//    }
+    public void put(String key, Drawable value) {
+        put(key, Utils.drawable2Bitmap(value));
+    }
 
-//    public Drawable getAsDrawable(String key) {
-//        byte[] bytes = getAsBytes(key);
-//        if (bytes == null) {
-//            return null;
-//        }
-//        return Utils.bitmap2Drawable(Utils.bytes2Bitmap(bytes));
-//    }
+    public Drawable getAsDrawable(String key) {
+        byte[] bytes = getAsBytes(key);
+        if (bytes == null) {
+            return null;
+        }
+        return Utils.bitmap2Drawable(Utils.bytes2Bitmap(bytes));
+    }
 
     // =======================================
     // ============= other methods =============
