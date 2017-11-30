@@ -263,6 +263,8 @@ public class MainActivity extends BaseActivity {
     public void DialogFragmentDemoActivity(View view) {
         startActivity(new Intent(this, DialogFragmentDemoActivity.class));
     }
-
+ public void CacheActivity(View view) {
+        startActivity(new Intent(this, CacheActivity.class));
+    }
 
 }

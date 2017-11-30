@@ -24,7 +24,7 @@ public class App extends Application {
     }
 
     //返回DBHelper实例，
-    public static DBHelper getmDBHelper(){
+    public static DBHelper getmDBHelper() {
         return mDBHelper;
     }
 

@@ -190,6 +190,14 @@
                 android:onClick="DialogFragmentDemoActivity"
                 android:text="DialogFragmentDemoActivity"
                 android:textAllCaps="false" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="CacheActivity"
+                android:text="CacheActivity"
+                android:textAllCaps="false" />
+
         </com.google.android.flexbox.FlexboxLayout>
 
     </LinearLayout>

@@ -75,6 +75,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DialogFragmentDemoActivity" />
+        <activity android:name=".activity.CacheActivity"></activity>
     </application>
 
 </manifest>
