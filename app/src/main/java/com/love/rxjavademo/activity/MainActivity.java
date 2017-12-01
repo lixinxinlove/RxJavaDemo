@@ -7,7 +7,9 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
+import com.lixinxin.jnidemo1.jni.JNI;
 import com.love.rxjavademo.R;
 import com.love.rxjavademo.md.MaterialDesignActivity;
 import com.love.rxjavademo.rxjava.OkHttpActivity;
@@ -32,6 +34,10 @@ public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
 
+    private TextView textView;
+
+    private JNI jni;
+
     @Override
     protected int getContentViewId() {
         return R.layout.activity_main;
@@ -39,7 +45,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void findView() {
-
+        textView = (TextView) findViewById(R.id.tv);
     }
 
     @Override
@@ -51,6 +57,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(TAG, getAdresseMAC(this));
+        jni = new JNI();
+        textView.setText(jni.connect("Test "));
     }
 
 
@@ -263,7 +271,8 @@ public class MainActivity extends BaseActivity {
     public void DialogFragmentDemoActivity(View view) {
         startActivity(new Intent(this, DialogFragmentDemoActivity.class));
     }
- public void CacheActivity(View view) {
+
+    public void CacheActivity(View view) {
         startActivity(new Intent(this, CacheActivity.class));
     }
 
