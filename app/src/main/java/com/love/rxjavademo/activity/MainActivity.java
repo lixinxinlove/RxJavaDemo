@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.lixinxin.jnidemo1.jni.JNI;
 import com.love.rxjavademo.R;
 import com.love.rxjavademo.md.MaterialDesignActivity;
 import com.love.rxjavademo.rxjava.OkHttpActivity;
@@ -36,7 +35,7 @@ public class MainActivity extends BaseActivity {
 
     private TextView textView;
 
-    private JNI jni;
+
 
     @Override
     protected int getContentViewId() {
@@ -57,8 +56,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(TAG, getAdresseMAC(this));
-        jni = new JNI();
-        textView.setText(jni.connect("Test "));
     }
 
 
@@ -274,6 +271,10 @@ public class MainActivity extends BaseActivity {
 
     public void CacheActivity(View view) {
         startActivity(new Intent(this, CacheActivity.class));
+    }
+
+    public void RecyclerViewTopActivity(View view) {
+        startActivity(new Intent(this, RecyclerViewTopActivity.class));
     }
 
 }
