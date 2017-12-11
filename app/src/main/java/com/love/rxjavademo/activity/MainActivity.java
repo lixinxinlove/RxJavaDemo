@@ -36,7 +36,6 @@ public class MainActivity extends BaseActivity {
     private TextView textView;
 
 
-
     @Override
     protected int getContentViewId() {
         return R.layout.activity_main;
@@ -275,6 +274,10 @@ public class MainActivity extends BaseActivity {
 
     public void RecyclerViewTopActivity(View view) {
         startActivity(new Intent(this, RecyclerViewTopActivity.class));
+    }
+
+    public void TimesSquareActivity(View view) {
+        startActivity(new Intent(this, TimesSquareActivity.class));
     }
 
 }

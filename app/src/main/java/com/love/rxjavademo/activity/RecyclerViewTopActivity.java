@@ -63,7 +63,6 @@ public class RecyclerViewTopActivity extends BaseActivity {
                 if (view != null) {
                     if (firstVisibleItemPosition >= 1) {
                         rlTopLayout.setVisibility(View.VISIBLE);
-
                     } else {
                         rlTopLayout.setVisibility(View.INVISIBLE);
                     }

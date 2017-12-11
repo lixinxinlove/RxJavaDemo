@@ -76,7 +76,8 @@
         </activity>
         <activity android:name=".activity.DialogFragmentDemoActivity" />
         <activity android:name=".activity.CacheActivity" />
-        <activity android:name=".activity.RecyclerViewTopActivity"></activity>
+        <activity android:name=".activity.RecyclerViewTopActivity" />
+        <activity android:name=".activity.TimesSquareActivity"></activity>
     </application>
 
 </manifest>
