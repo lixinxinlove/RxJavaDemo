@@ -26,10 +26,10 @@ public class TimesSquareActivity extends BaseActivity {
         Calendar nextYear = Calendar.getInstance();
         nextYear.add(Calendar.MONTH, 3);
 
-        CalendarPickerView calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
+
         Date today = new Date();
-        calendar.init(today, nextYear.getTime()).withSelectedDate(today);
-        calendar.init(today, nextYear.getTime()).inMode(CalendarPickerView.SelectionMode.SINGLE);
+        mCalendarPickerView.init(today, nextYear.getTime()).withSelectedDate(today);
+        mCalendarPickerView.init(today, nextYear.getTime()).inMode(CalendarPickerView.SelectionMode.SINGLE);
     }
 
     @Override
