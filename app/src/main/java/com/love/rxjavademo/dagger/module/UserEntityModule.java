@@ -14,6 +14,7 @@ public class UserEntityModule {
 
     @Provides
     UserEntity getUser() {
-        return new UserEntity("lixinxin", 22, "三里屯");
+        return new UserEntity("lllll", 22, "三里屯");
     }
+
 }

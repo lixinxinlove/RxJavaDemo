@@ -17,7 +17,7 @@ public class DaggerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DaggerUserEntityComponent.create().inject(this);
+        DaggerUserEntityComponent.create().lixinxin(this);
         Log.e("DaggerActivity", userEntity.toString());
     }
 

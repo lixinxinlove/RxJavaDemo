@@ -11,5 +11,5 @@ import dagger.Component;
 
 @Component(modules = UserEntityModule.class)
 public interface UserEntityComponent {
-    void inject(DaggerActivity activity);
+    void lixinxin(DaggerActivity activity);
 }
