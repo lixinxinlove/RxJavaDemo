@@ -278,8 +278,13 @@ public class MainActivity extends BaseActivity {
 
     public void TimesSquareActivity(View view) {
         startActivity(new Intent(this, TimesSquareActivity.class));
-    }public void ObjectBoxActivity(View view) {
+    }
+
+    public void ObjectBoxActivity(View view) {
         startActivity(new Intent(this, ObjectBoxActivity.class));
+    }
+ public void DaggerActivity(View view) {
+        startActivity(new Intent(this, DaggerActivity.class));
     }
 
 }

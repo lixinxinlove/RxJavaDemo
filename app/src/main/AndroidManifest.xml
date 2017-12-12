@@ -78,7 +78,8 @@
         <activity android:name=".activity.CacheActivity" />
         <activity android:name=".activity.RecyclerViewTopActivity" />
         <activity android:name=".activity.TimesSquareActivity" />
-        <activity android:name=".activity.ObjectBoxActivity"></activity>
+        <activity android:name=".activity.ObjectBoxActivity" />
+        <activity android:name=".activity.DaggerActivity"></activity>
     </application>
 
 </manifest>
