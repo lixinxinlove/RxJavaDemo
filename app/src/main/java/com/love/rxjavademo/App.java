@@ -2,7 +2,6 @@ package com.love.rxjavademo;
 
 import android.app.Application;
 
-import com.love.rxjavademo.bean.MyObjectBox;
 import com.love.rxjavademo.db.DBHelper;
 
 import io.objectbox.BoxStore;
@@ -26,7 +25,7 @@ public class App extends Application {
         super.onCreate();
         app = this;
         mDBHelper = new DBHelper(getApplicationContext());
-        boxStore = MyObjectBox.builder().androidContext(App.this).build();
+       // boxStore = MyObjectBox.builder().androidContext(App.this).build();
     }
 
     //返回DBHelper实例，

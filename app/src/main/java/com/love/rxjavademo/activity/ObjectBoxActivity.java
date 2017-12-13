@@ -48,11 +48,10 @@ public class ObjectBoxActivity extends BaseActivity {
     public void onSelect(View view) {
         Box<Food> foodBox = App.getBoxStore().boxFor(Food.class);
         List<Food> foodList = foodBox.query().build().find();
-        if (foodList != null) {
+        if (foodList.size() > 0) {
             textView.setText(foodList.get(0).toString());
         } else {
             textView.setText("没有数据");
         }
     }
-
 }
