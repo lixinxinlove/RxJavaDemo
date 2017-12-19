@@ -79,7 +79,11 @@
         <activity android:name=".activity.RecyclerViewTopActivity" />
         <activity android:name=".activity.TimesSquareActivity" />
         <activity android:name=".activity.ObjectBoxActivity" />
-        <activity android:name=".activity.DaggerActivity"></activity>
+        <activity android:name=".activity.DaggerActivity" />
+        <activity
+            android:name=".activity.BiLiActivity"
+            android:label="@string/title_activity_bi_li"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

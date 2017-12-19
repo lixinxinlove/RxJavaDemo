@@ -21,6 +21,9 @@ android {
             }
         }
 
+        dataBinding {
+            enabled = true
+        }
     }
     buildTypes {
         release {
@@ -36,6 +39,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':times-square-library')
+    compile project(':leeview')
     compile 'com.google.android:flexbox:0.2.6'
     compile 'com.android.support:support-v4:25.0.1'
     compile 'com.android.support:recyclerview-v7:25.0.1'
@@ -61,5 +65,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
-    compile project(':leeview')
 }

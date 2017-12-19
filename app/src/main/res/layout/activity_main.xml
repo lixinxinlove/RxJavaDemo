@@ -232,6 +232,12 @@
                 android:onClick="DaggerActivity"
                 android:text="Dagger"
                 android:textAllCaps="false" />
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="BiLiActivity"
+                android:text="BiLi"
+                android:textAllCaps="false" />
 
         </com.google.android.flexbox.FlexboxLayout>
 

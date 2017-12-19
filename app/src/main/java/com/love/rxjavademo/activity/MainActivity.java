@@ -283,8 +283,13 @@ public class MainActivity extends BaseActivity {
     public void ObjectBoxActivity(View view) {
         startActivity(new Intent(this, ObjectBoxActivity.class));
     }
- public void DaggerActivity(View view) {
+
+    public void DaggerActivity(View view) {
         startActivity(new Intent(this, DaggerActivity.class));
+    }
+
+    public void BiLiActivity(View view) {
+        startActivity(new Intent(this, BiLiActivity.class));
     }
 
 }
