@@ -1,18 +1,19 @@
 package com.love.rxjavademo.activity;
 
 import android.app.Service;
-import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
 import com.chad.library.adapter.base.listener.OnItemDragListener;
-import com.chad.library.adapter.base.listener.OnItemSwipeListener;
 import com.love.rxjavademo.R;
 import com.love.rxjavademo.adapter.ItemDraggableAdapter;
 import com.love.rxjavademo.view.MyItemDecoration;
@@ -20,7 +21,7 @@ import com.love.rxjavademo.view.MyItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends BaseActivity {
+public class RecyclerViewActivity extends BaseActivity implements BaseQuickAdapter.OnItemChildClickListener {
 
     private RecyclerView recyclerView;
 
@@ -38,30 +39,13 @@ public class RecyclerViewActivity extends BaseActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new MyItemDecoration());
-       // recyclerView.setNestedScrollingEnabled(false);
-
-
         initData();
-
         recyclerView.setAdapter(adapter);
-
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-
-                Log.e("lee--", recyclerView.getHeight() + "");
-
-                Toast.makeText(RecyclerViewActivity.this, recyclerView.getHeight() + "", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
     }
 
     @Override
     protected void setListener() {
-
+        adapter.setOnItemChildClickListener(this);
     }
 
     @Override
@@ -72,20 +56,17 @@ public class RecyclerViewActivity extends BaseActivity {
     private void initData() {
 
         mDate = new ArrayList<>();
-        for (int i = 0; i < 300; i++) {
+        for (int i = 0; i < 15; i++) {
             mDate.add("lee" + i);
         }
         adapter = new ItemDraggableAdapter(mDate);
-
-
         ItemDragAndSwipeCallback itemDragAndSwipeCallback = new ItemDragAndSwipeCallback(adapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragAndSwipeCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         // 开启拖拽
-        adapter.enableDragItem(itemTouchHelper, R.id.tv, true);
+        adapter.enableDragItem(itemTouchHelper, R.id.btn, true);
         adapter.setOnItemDragListener(onItemDragListener);
-
         // 开启滑动删除
         //  adapter.enableSwipeItem();
         //  adapter.setOnItemSwipeListener(onItemSwipeListener);
@@ -96,8 +77,9 @@ public class RecyclerViewActivity extends BaseActivity {
         public void onItemDragStart(RecyclerView.ViewHolder viewHolder, int pos) {
             Vibrator vib = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
             if (vib.hasVibrator()) {
-                vib.vibrate(50);
+                vib.vibrate(550);
             }
+            viewHolder.itemView.findViewById(R.id.root_layout).setBackgroundColor(Color.BLUE);
         }
 
         @Override
@@ -109,27 +91,35 @@ public class RecyclerViewActivity extends BaseActivity {
             for (int i = 0; i < mDate.size(); i++) {
                 Log.e("data", mDate.get(i));
             }
+            viewHolder.itemView.findViewById(R.id.root_layout).setBackgroundColor(getResources().getColor(R.color.colorAccent));
         }
     };
 
-    OnItemSwipeListener onItemSwipeListener = new OnItemSwipeListener() {
-        @Override
-        public void onItemSwipeStart(RecyclerView.ViewHolder viewHolder, int pos) {
-        }
 
-        @Override
-        public void clearView(RecyclerView.ViewHolder viewHolder, int pos) {
-        }
+    // 内部控件点击事件
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        Toast.makeText(this, position + "", Toast.LENGTH_SHORT).show();
+    }
 
-        @Override
-        public void onItemSwiped(RecyclerView.ViewHolder viewHolder, int pos) {
-        }
-
-        @Override
-        public void onItemSwipeMoving(Canvas canvas, RecyclerView.ViewHolder viewHolder, float dX, float dY, boolean isCurrentlyActive) {
-
-        }
-    };
+//    OnItemSwipeListener onItemSwipeListener = new OnItemSwipeListener() {
+//        @Override
+//        public void onItemSwipeStart(RecyclerView.ViewHolder viewHolder, int pos) {
+//        }
+//
+//        @Override
+//        public void clearView(RecyclerView.ViewHolder viewHolder, int pos) {
+//        }
+//
+//        @Override
+//        public void onItemSwiped(RecyclerView.ViewHolder viewHolder, int pos) {
+//        }
+//
+//        @Override
+//        public void onItemSwipeMoving(Canvas canvas, RecyclerView.ViewHolder viewHolder, float dX, float dY, boolean isCurrentlyActive) {
+//
+//        }
+//    };
 
 
 }

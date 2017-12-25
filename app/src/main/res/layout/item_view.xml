@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="50dp"
+    android:background="@color/colorAccent"
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rl_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:src="@mipmap/ic_launcher" />
+            android:background="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv"
@@ -25,12 +29,28 @@
             android:layout_marginLeft="16dp"
             android:gravity="center_vertical" />
 
-        <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="1px"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:background="#ccc" />-->
-
     </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp" />
+
+
+    </FrameLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#cccccc" />
 
 </LinearLayout>
