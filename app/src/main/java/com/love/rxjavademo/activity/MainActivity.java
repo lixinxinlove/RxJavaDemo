@@ -35,7 +35,6 @@ public class MainActivity extends BaseActivity {
 
     private TextView textView;
 
-
     @Override
     protected int getContentViewId() {
         return R.layout.activity_main;
@@ -56,7 +55,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         Log.e(TAG, getAdresseMAC(this));
     }
-
 
     private static final String marshmallowMacAddress = "02:00:00:00:00:00";
     private static final String fileAddressMac = "/sys/class/net/wlan0/address";

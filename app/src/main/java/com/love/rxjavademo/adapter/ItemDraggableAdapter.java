@@ -28,8 +28,6 @@ public class ItemDraggableAdapter extends BaseItemDraggableAdapter<String, BaseV
             helper.getView(R.id.fl_layout).setVisibility(View.GONE);
             helper.getView(R.id.rl_layout).setVisibility(View.VISIBLE);
         }
-
         helper.addOnClickListener(R.id.tv);
-
     }
 }

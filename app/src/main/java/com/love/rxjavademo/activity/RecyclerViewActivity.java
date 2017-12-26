@@ -77,7 +77,7 @@ public class RecyclerViewActivity extends BaseActivity implements BaseQuickAdapt
         public void onItemDragStart(RecyclerView.ViewHolder viewHolder, int pos) {
             Vibrator vib = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
             if (vib.hasVibrator()) {
-                vib.vibrate(550);
+                vib.vibrate(50);
             }
             viewHolder.itemView.findViewById(R.id.root_layout).setBackgroundColor(Color.BLUE);
         }
