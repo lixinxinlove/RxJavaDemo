@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="@color/colorAccent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent">
 
     <RelativeLayout
         android:id="@+id/rl_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv"
@@ -28,15 +17,12 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:gravity="center_vertical" />
-
     </RelativeLayout>
-
 
     <FrameLayout
         android:id="@+id/fl_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-
+        android:layout_height="150dp">
 
         <EditText
             android:id="@+id/et"
@@ -45,12 +31,29 @@
             android:layout_marginRight="50dp" />
 
 
+        <ImageView
+            android:src="@mipmap/ic_girl"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+
     </FrameLayout>
 
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@mipmap/ic_launcher" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
+        android:layout_gravity="bottom"
         android:background="#cccccc" />
 
-</LinearLayout>
+</FrameLayout>
