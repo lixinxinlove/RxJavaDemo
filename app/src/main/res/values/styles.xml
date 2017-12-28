@@ -24,4 +24,12 @@
         <item name="android:windowExitAnimation">@anim/dialog_push_out</item>
     </style>
 
+    <style name="game_bg_style">
+        <item name="android:background">@drawable/gram_bg</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
 </resources>

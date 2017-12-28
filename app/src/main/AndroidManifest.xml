@@ -83,7 +83,8 @@
         <activity
             android:name=".activity.BiLiActivity"
             android:label="@string/title_activity_bi_li"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.GameActivity"></activity>
     </application>
 
 </manifest>

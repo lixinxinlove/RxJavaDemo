@@ -290,4 +290,8 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(this, BiLiActivity.class));
     }
 
+    public void GameActivity(View view) {
+        startActivity(new Intent(this, GameActivity.class));
+    }
+
 }
