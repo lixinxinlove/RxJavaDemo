@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -60,6 +61,11 @@ public class RecyclerViewActivity extends BaseActivity implements BaseQuickAdapt
             mDate.add("lee" + i);
         }
         adapter = new ItemDraggableAdapter(mDate);
+
+        TextView textView = new TextView(this);
+        textView.setText("这是头");
+        adapter.addHeaderView(textView);
+
         ItemDragAndSwipeCallback itemDragAndSwipeCallback = new ItemDragAndSwipeCallback(adapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragAndSwipeCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
