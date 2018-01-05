@@ -84,7 +84,8 @@
             android:name=".activity.BiLiActivity"
             android:label="@string/title_activity_bi_li"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.GameActivity"></activity>
+        <activity android:name=".activity.GameActivity" />
+        <activity android:name=".activity.H5Activity"></activity>
     </application>
 
 </manifest>

@@ -292,6 +292,8 @@ public class MainActivity extends BaseActivity {
 
     public void GameActivity(View view) {
         startActivity(new Intent(this, GameActivity.class));
+    } public void H5Activity(View view) {
+        startActivity(new Intent(this, H5Activity.class));
     }
 
 }
